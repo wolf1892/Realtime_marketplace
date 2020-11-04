@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"></meta>
+	<title>Crypterio</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/icons.css">
+	<link rel="stylesheet" href="css/ui.css">
+</head>
+<body class="crypt-dark">
+	<header>
+		<div class="container-full-width">
+			<div class="crypt-header">
+				<div class="row">
+					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-5">
+						<div class="row">
+							<div class="col-xs-2">
+								<div class="crypt-logo">
+									<img src="images/logo.jpg" alt="">
+								</div>
+							</div>
+							
+						</div>
+					</div>
+					<div class="col-xl-8 col-lg-8 col-md-8 d-none d-md-block d-lg-block">
+						<ul class="crypt-heading-menu fright">
+							<li><a href="realtime.html">Realtime</a></li>
+							<li><a href="market-overview.html">Search</a></li>
+							
+							
+							
+                            
+                            <li class="crypt-box-menu menu-green"><a href="login.php">login</a></li>
+						</ul>
+					</div>
+					<i class="menu-toggle pe-7s-menu d-xs-block d-sm-block d-md-none d-sm-none"></i>
+				</div>
+			</div>
+		</div>
+		
+	</header>
+	<!-- Main Content -->
+	<div class="container">
+		<div class="row">
+			<div class="col md-12 text-center">
+				<h1 class="mt-5 mb-5 text-white">All Products listed</h1>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="table-responsive">
+					<table class="table table-striped crypt-table-market-cap" id="tableji">
+					  <thead>
+					    <tr>
+					      <th scope="col">Product Name</th>
+					      <th scope="col" class="text-left pl-2">Price</th>
+					      <th scope="col">Per</th>
+					      <th scope="col">Person Name</th>
+					      <th scope="col">Phone number</th>
+					      <th scope="col">Packaging size</th>
+					      <th scope="col">Brand</th>
+					    <th scope="col">Speciality</th>
+					    <th scope="col">Life</th>
+					    <th scope="col">MOQ</th>
+					    
+					</tr>
+					  </thead>
+					  <tbody id="crypto-table-body">
+					  </tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+		
+	
+	
+	<footer>
+		
+	</footer>
+	
+	<script  src="./r_script.js"></script>
+</body>
+
+<style>
+#myInput {
+  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+#myTable {
+  border-collapse: collapse; /* Collapse borders */
+  width: 100%; /* Full-width */
+  border: 1px solid #ddd; /* Add a grey border */
+  font-size: 18px; /* Increase font-size */
+}
+
+#myTable th, #myTable td {
+  text-align: left; /* Left-align text */
+  padding: 12px; /* Add padding */
+}
+
+#myTable tr {
+  /* Add a bottom border to all table rows */
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  /* Add a grey background color to the table header and on hover */
+  background-color: #f1f1f1;
+}
+</style>
+
+<script>
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("tableji");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+
+</html>
