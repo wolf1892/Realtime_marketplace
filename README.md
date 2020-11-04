@@ -1,4 +1,3 @@
-# login_registration_system_LAMP
 
 1. Download all the files, or clone this repository.
 2. Create database and the table from the SQL code given.
